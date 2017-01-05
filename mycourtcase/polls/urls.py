@@ -11,7 +11,6 @@ urlpatterns = [
 
 
 
-
 # urlpatterns = [
 #     # ex: /polls/
 #     url(r'^$', views.index, name='index'),

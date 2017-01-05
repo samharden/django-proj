@@ -12,22 +12,21 @@ from .forms import frontpage, searchform, complaintform, pub_acc, emp_disc
 # from flask.ext.login import login_user, logout_user, current_user, login_required
 
 
-def index():
+def index(request):
+
+    # return HttpResponse("Hello")
     print("Top of index")
     form = frontpage()
-    session['complaint_or_search'] = form.complaint_or_search.data
+    # session['complaint_or_search'] = form.complaint_or_search.data
+    #
+    # complaint_or_search = session['complaint_or_search']
+    #
+    # if complaint_or_search == 'search':
+    #     return redirect(url_for('search'))
+    # elif complaint_or_search == 'complaint':
+    #     return redirect(url_for('choose_complaint_type'))
 
-    complaint_or_search = session['complaint_or_search']
-
-    if complaint_or_search == 'search':
-        return redirect(url_for('search'))
-    elif complaint_or_search == 'complaint':
-        return redirect(url_for('choose_complaint_type'))
-
-    return render_template('index.html',
-                           title='FCHR Assistant',
-                           form=form,
-                          )
+    return render(request, 'fl-discrim-helper/index.html')
 
 
 def search():

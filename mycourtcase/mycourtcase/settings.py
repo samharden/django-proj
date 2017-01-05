@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fl_discrim_helper',
-    'polls.apps.PollsConfig'
+    'polls.apps.PollsConfig',
+    'main',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

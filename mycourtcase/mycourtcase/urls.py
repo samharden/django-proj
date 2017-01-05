@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from fl_discrim_helper import views
+from main import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^polls/', include('polls.urls')),
+    url(r'^polls/', include('polls.urls', namespace='polls')),
     url(r'^fl-discrim-helper/', include('fl_discrim_helper.urls')),
-
+    url(r'^$', views.home_page, name='home.html'),
+    url(r'^main/', include('main.urls')),
 ]
