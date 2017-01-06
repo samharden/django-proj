@@ -8,14 +8,13 @@
 
 <h3 class="title-border" style="text-align: center;">Login or create a free account to get started:</h3>
 <blockquote>
-  <form action='/' method="post">
+  <form  method="post" action "">
       {% csrf_token %}
-<h4>Username: {{ form.name }}</h4>
+<h4> {{ form.as_p }}</h4>
 
-<h4>Password: <input></h4>
 <br>
 <br>
-        <center>  <p><input type="submit" value="login"></p></center>
+        <center>  <p><input type="submit" value="login" /></p></center>
 <br>
 <br>
 </form>

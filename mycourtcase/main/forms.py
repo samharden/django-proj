@@ -1,6 +1,13 @@
 from django import forms
+from main.form_choices import *
 
 class LoginForm(forms.Form):
-    name = forms.CharField(max_length=40)
-    password = forms.CharField(max_length=40)
-    
+    name = forms.CharField(label = 'Name', max_length=40, required=True)
+    password = forms.CharField(label = 'Password', max_length=40, required=True)
+#
+class ProblemForm(forms.Form):
+    case_type = forms.ChoiceField(label = '',
+                                        choices = CASETYPE_CHOICES,
+                                        required = True,
+
+                                        )

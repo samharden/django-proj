@@ -2,41 +2,56 @@
 
 # Create your views here.
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
-from main.forms import LoginForm
+from main.forms import LoginForm, ProblemForm
 #
-# from flask import render_template, flash, redirect, url_for, session, Markup, request, g
-# from app import app
-# from app import models as mdl
-
-# from flask.ext.login import login_user, logout_user, current_user, login_required
 
 
 def home_page(request):
+    # if this is a POST request we need to process the form data
 
-    # return HttpResponse("Hello")
-    if request.method =='GET':
-        form = LoginForm()
-    else:
+    if request.method == 'POST':
+        print("Hello")
         form = LoginForm(request.POST)
+
         if form.is_valid():
+            print("Valid")
             name = form.cleaned_data['name']
             print(name)
-            return HttpResponse(name)
+            password = form.cleaned_data['password']
+            print(password)
+            if name == 'samharden' and password == 'hello':
+                print('logged in')
+                return HttpResponseRedirect('main/search.html')
+            else:
+                form = LoginForm()
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = LoginForm()
+
+    return render(request, 'main/home.html', {'form': form})
 
 
+def search_page(request):
+    # if this is a POST request we need to process the form data
+    form = ProblemForm(request.POST)
+    if request.method == 'POST':
+        print("Hello")
+        form = ProblemForm(request.POST)
 
+        if form.is_valid():
+            print("Valid")
+            case_type = form.cleaned_data['case_type']
+            print(case_type)
+        else:
+            form = ProblemForm()
 
-    # session['complaint_or_search'] = form.complaint_or_search.data
-    #
-    # complaint_or_search = session['complaint_or_search']
-    #
-    # if complaint_or_search == 'search':
-    #     return redirect(url_for('search'))
-    # elif complaint_or_search == 'complaint':
-    #     return redirect(url_for('choose_complaint_type'))
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = ProblemForm()
 
-    return render(request, 'main/home.html', {'form':form,})
+    return render(request, 'main/search.html', {'form': form})
