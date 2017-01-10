@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', auth_views.login, name='homepage'),
-    url(r'^search.html', views.search_page, name='vote'),
+    url(r'^search.html', views.search_page, name='search'),
 ]
 
 

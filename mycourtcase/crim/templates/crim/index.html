@@ -1,0 +1,19 @@
+
+{% extends "crim/base0.html" %}
+
+{% block content %}
+
+
+
+
+
+<h3 class="title-border" style="text-align: center;">To get started, describe your case:</h3>
+<form  method="post" action "">
+      {% csrf_token %}
+<center>{{ crimform.as_p }}
+
+
+            <p><input type="submit" value="continue" /></p></center>
+</form>
+
+{% endblock %}

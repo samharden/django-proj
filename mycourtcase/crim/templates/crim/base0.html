@@ -11,29 +11,19 @@
 
 {% load static %}
 <link rel='stylesheet' id='style-css'  href='{% static 'main/stylesheet.css' %}' type='text/css' media='all' />
-
-
-
-
 </head>
+<body>
 
 
-  <body class="home page page-id-10 page-template-default navbar-fixed">
 
-  <div class="wrapper">
-  	<div class="header-wrapper">
-  				<header class="header" style="background-image: url(http://res.cloudinary.com/hjbqakjln/image/upload/v1474467770/background_qx4qte.png)" role="banner">
+  				<header class="topbar" style="" role="">
   			<div class="navbar">
   				<div class="container clearfix">
   										<a class="brand" href="/">MY COURT CASE</a>
+	</header>
+<br><br>
 
-  					<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
-  				</div>
-  			</div>
-  			<div class="header-inner container title-center">
-  				<h1 class="site-title"><a href="http://www.mycourtcase.org" title="MY COURT CASE" rel="home">MY COURT CASE</a></h1><h3 class="site-description">Know your case, know your chances.</h3>			</div>
-  		</header>
-  	</div>
+
   	<main class="main container clearfix" role="main">
 
     {% block content %}
@@ -57,7 +47,7 @@
     <div class="wrapper">
     	<div class="footer-wrapper">
                       <center>
-    										<a href="/">HOME</a> &nbsp &nbsp &nbsp<a href="/">ABOUT</a>
+    										<a href="/">HOME</a> &nbsp &nbsp &nbsp<a href="/">ABOUT</a>&nbsp &nbsp &nbsp<a href="/">DISCLAIMER</a>&nbsp &nbsp &nbsp<a href="/">CONTACT</a>
     			</div>
     			<div class="footer-inner container title-center">
 

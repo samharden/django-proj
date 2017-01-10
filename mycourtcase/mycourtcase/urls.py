@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^fl-discrim-helper/', include('fl_discrim_helper.urls')),
     url(r'^$', views.home_page, name='home.html'),
     url(r'^main/', include('main.urls')),
+    url(r'^crim/', include('crim.urls')),
 ]

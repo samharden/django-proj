@@ -7,6 +7,7 @@ from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from main.forms import LoginForm, ProblemForm
+from crim import templates
 #
 
 
@@ -47,6 +48,11 @@ def search_page(request):
             print("Valid")
             case_type = form.cleaned_data['case_type']
             print(case_type)
+            if case_type == 'crim':
+
+                return HttpResponseRedirect('/crim')
+            elif case_type == 'discrim':
+                return HttpResponseRedirect('/fl-discrim-helper')
         else:
             form = ProblemForm()
 

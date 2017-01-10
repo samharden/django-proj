@@ -1,29 +1,81 @@
 {% extends "main/base.html" %}
 
 {% block content %}
+<body>
+
+
+  <h3 class="landing-section-heading" style="text-align: center;"><strong>We've Analyzed <div id="value">
+  </div> Cases and Counting.</strong></h3>
+
+  <script type="text/javascript">
+  function animateValue(id, start, end, duration) {
+      var range = end - start;
+      var current = start;
+      var increment = end > start? 1 : -1;
+      var stepTime = Math.abs(Math.floor(duration / range));
+      var obj = document.getElementById(id);
+      var timer = setInterval(function() {
+          current += increment;
+          obj.innerHTML = current;
+          if (current == end) {
+              clearInterval(timer);
+          }
+      }, stepTime);
+  }
+
+  animateValue("value", 100000, 594298);
+  </script>
+
+  <h2 class="landing-section-heading" style="text-align: center;"><strong>
+    It's your case - take control. </strong></h2>
+
+  <p class="landing-section-heading" style="text-align: justify;">
+    Court shouldn&#8217;t be confusing. Our system analyzes
+    hundreds of thousands of cases like yours so that you can find
+    out what happened in those cases and use that information to
+    your advantage.</p>
 
 
 
 
+  <h2 class="landing-section-heading" style="text-align: center;">
+    Our Detailed Analysis. For Free.</h2>
 
-<h3 class="title-border" style="text-align: center;">Login or create a free account to get started:</h3>
-<blockquote>
-  <form  method="post" action "">
-      {% csrf_token %}
-<h4> {{ form.as_p }}</h4>
+  <p class="landing-section-heading" style="text-align: justify;">
+    We've analyzed the details of hundreds of thousands of court
+    cases from start to finish. Use our system to find out if hiring
+    a private attorney gives you an edge in your case, as well as how
+    judges rule and how cases resolve in order to determine what choices
+    you can make to get the best results.</p>
 
-<br>
-<br>
-        <center>  <p><input type="submit" value="login" /></p></center>
-<br>
-<br>
+<form method="post" >
+  {% csrf_token %}
+<center>
+
+          <a href="main/search.html" id="view-on-github" class="button"><span>Get Started</span></a>
+</center>
+
 </form>
-</blockquote>
+
+<br>
+  <form  method="post" action "" class="formblock">
+      Have an account? Login here:
+      {% csrf_token %}
+<p>
+ Username: {{ form.name }}
+ </p>
+ <p>
+ Password: &nbsp{{ form.password }}
+ </p>
+        <center>  <p><input type="submit" value="login" /></p></center>
+
+</form>
+</p>
 Create a free account:
 <h4>
 </div><div  class="row  first_row"><div  class="col-sm-6  first_col"><div role="field" data-field-wrapper="fld_7795160" class="form-group">
 
-
+</body>
 
 
 {% endblock %}

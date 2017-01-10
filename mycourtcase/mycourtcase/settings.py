@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'fl_discrim_helper',
     'polls.apps.PollsConfig',
     'main',
+    'crim',
 ]
 
 

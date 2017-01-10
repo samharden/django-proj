@@ -473,7 +473,7 @@ th {
 }
 html,
 body {
-  color: #666;
+  color: #777;
   font: 300 20px/1.6 Lato, sans-serif;
   -webkit-font-smoothing: antialiased;
   background: #fff;
@@ -513,14 +513,13 @@ h6 {
   text-transform: uppercase;
 }
 
-blockinputquote{
-  padding: 1em 1.5em;
-  line-height: 150%;
+
+.formblock {
+  padding: 1em;
+  width: 50%;
   color: #666;
   background: #f0f0f3;
-  border-left: 8px solid #13c0a2;
-  border-right: 8px solid #13c0a2;
-  margin: 1em 0;
+
 }
 
 blockquote {
@@ -532,6 +531,7 @@ blockquote {
   border-right: 8px solid #13c0a2;
   margin: 1em 0;
 }
+
 blockquote p:last-child {
   margin: 0;
 }
@@ -561,6 +561,7 @@ textarea {
   background: #;
   border-radius: 3px;
   transition: all .3s;
+
 }
 button:active,
 input:active,
