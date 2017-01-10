@@ -1,7 +1,9 @@
 CRIM_CASETYPE_CHOICES = (
     ('dui', ("DUI")),
     ('battery', ("Battery")),
-    ('discrim', ("Discrimination")),
+    ('marijuanaposs', ("Marijuana Possession")),
+    ('petit-theft', ("Petit Theft")),
+    ('dwlsr', ("Driving While License Suspended")),
 )
 CRIM_STATE_CHOICES = (
     ('fl', ("Florida")),

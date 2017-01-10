@@ -35,7 +35,7 @@ class PinellasJudges(forms.Form):
                                     )
 
 class HillsboroughJudges(forms.Form):
-    hillsb_judge = forms.ChoiceField(label = 'Judge:',
+    hillsb_judge = forms.ChoiceField(label = 'Judge  ',
                                     choices = CRIM_JUDGE_CHOICES_HILLSB,
                                     required = False,
 
