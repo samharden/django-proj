@@ -4,29 +4,44 @@ from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from .models import Question
 from django.http import Http404
-#
-# from flask import render_template, flash, redirect, url_for, session, Markup, request, g
-# from app import app
-# from app import models as mdl
-from .forms import frontpage, searchform, complaintform, pub_acc, emp_disc
+
+from .forms import *
 # from flask.ext.login import login_user, logout_user, current_user, login_required
 
 
 def index(request):
 
-    # return HttpResponse("Hello")
-    print("Top of index")
-    form = frontpage()
-    # session['complaint_or_search'] = form.complaint_or_search.data
-    #
-    # complaint_or_search = session['complaint_or_search']
-    #
-    # if complaint_or_search == 'search':
-    #     return redirect(url_for('search'))
-    # elif complaint_or_search == 'complaint':
-    #     return redirect(url_for('choose_complaint_type'))
+    indexform = DiscrimIndexForm(request.POST)
 
-    return render(request, 'fl-discrim-helper/index.html')
+    if request.method == 'POST':
+        print("Hello")
+        indexform = DiscrimIndexForm(request.POST)
+
+        if indexform.is_valid():
+            print("Valid index")
+            choice = indexform.cleaned_data['choice']
+            print(choice)
+
+            if choice == 'complaint':
+
+                return HttpResponse('Complaint')
+
+            elif choice == 'research':
+
+                return HttpResponse('Search')
+
+        else:
+            indexform = DiscrimIndexForm()
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        indexform = DiscrimIndexForm()
+
+
+    print("Top of index")
+
+
+    return render(request, 'fl-discrim-helper/index.html', {'indexform': indexform})
 
 
 def search():
@@ -40,25 +55,6 @@ def search():
                            title='FCHR Opinion Search.html',
                            form=form
                            )
-
-
-def choose_complaint_type():
-    form = complaintform()
-    session['what_kind_complaint'] = form.what_kind_complaint.data
-
-    what_kind_complaint = session['what_kind_complaint']
-
-    if what_kind_complaint == 'pub_acc':
-        return redirect(url_for('pub_acc_complaint_assistant'))
-    elif what_kind_complaint == 'emp':
-        return redirect(url_for('workplace_complaint_assistant'))
-
-
-    return render_template('choose-complaint-type.html',
-                           title='Complaint Builder',
-                           form=form
-                           )
-
 
 
 def workplace_complaint_assistant():

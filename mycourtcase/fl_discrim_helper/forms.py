@@ -1,10 +1,23 @@
+
 from django import forms
-class frontpage(forms.Form):
-    pass
+from fl_discrim_helper.form_choices import *
 
-class searchform(forms.Form):
-    pass
 
+#
+
+class DiscrimIndexForm(forms.Form):
+    choice = forms.ChoiceField(label = 'What would you like to do?',
+                                        choices = INDEX_CHOICES,
+                                        required = False,
+
+                                        )
+
+class DiscrimCaseTypeForm(forms.Form):
+    case_type = forms.ChoiceField(label = 'Type of case:',
+                                        choices = DISCRIM_CASETYPE_CHOICES,
+                                        required = False,
+
+                                        )
 class complaintform(forms.Form):
     pass
 
