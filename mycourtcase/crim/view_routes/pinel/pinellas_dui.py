@@ -38,6 +38,6 @@ def pinellas_dui(request):
                 return render(request, 'crim/fl/hills/dui/dui.html')
 
     else:
-        hillsb_judge = HillsboroughJudges()
+        pinell_judge = PinellasJudges()
 
-    return render(request, 'crim/fl/hills/hillsborough-dui.html', {'hillsb_judge': hillsb_judge})
+    return render(request, 'crim/fl/pinellas/pinellas-dui.html', {'pinell_judge': pinell_judge})

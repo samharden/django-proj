@@ -7,11 +7,11 @@
 
 
 
-<h3 class="title-border" style="text-align: center;">To get started, describe your case:</h3>
+<h3 class="title-border" style="text-align: center;">Please choose the type of case:</h3>
 <form  method="post" action "">
       {% csrf_token %}
-<center>Type of case: {{ form.as_p }}
-        <p><input type="submit" value="continue" /></p></center>
+<center>{{ form.as_p }}
+        <p><input type="submit" value="get started" /></p></center>
 </form>
 
 

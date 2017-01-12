@@ -48,8 +48,8 @@ def index(request):
                 return HttpResponseRedirect('fl/hills/hillsborough-dwlsr.html')
 
             elif case_type == 'dui' and county == 'pinell':
-                pinell_judge = PinellasJudges(request.POST)
-                return render(request, 'crim/pinellas-dui.html', {'pinell_judge': pinell_judge})
+                pinell_judge = PinellasJudges()
+                return HttpResponseRedirect('fl/pinellas/pinellas-dui.html')
         else:
             crimform = CrimCaseTypeForm()
 
@@ -62,18 +62,3 @@ def index(request):
 
 
     return render(request, 'crim/index.html', {'crimform': crimform})
-
-def pinellas(request):
-    pinell_judge = PinellasJudges(request.POST)
-    print("Pinellas Page")
-    if request.method == 'POST':
-        print("Hello")
-        pinell_judge = PinellasJudges(request.POST)
-        if crimform.is_valid():
-            print("Valid")
-            pinell_judge = PinellasJudges(request.POST)
-            print(judge)
-    else:
-        pinell_judge = PinellasJudges()
-
-    return render(request, 'crim/pinellas.html', {'pinell_judge': pinell_judge})
