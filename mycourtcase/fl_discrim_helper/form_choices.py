@@ -6,9 +6,68 @@ INDEX_CHOICES = (
 
 
 DISCRIM_CASETYPE_CHOICES = (
-    ('dui', ("DUI")),
-    ('battery', ("Battery")),
-    ('marijuanaposs', ("Marijuana Possession")),
-    ('petit-theft', ("Petit Theft")),
-    ('dwlsr', ("Driving While License Suspended")),
+    ('pubacc', ("Public Accomodation")),
+    ('employment', ("Employment")),
+    ('housing', ("Housing")),
+
 )
+
+##
+
+STATE_CHOICES = (
+    ('FL', ("FL")),
+    ('GA', ("GA")),
+)
+
+SEX_CHOICES = (
+    ('female', ("Female")),
+    ('male', ("Male")),
+)
+RACE_CHOICES = (
+    ('black', ("Black")),
+    ('white', ("White")),
+    ('asian', ("Asian")),
+    ('nat-ha-pac', ("Native Hawaiian / Pacific Islander")),
+    ('amerindian', ('American Indian / First Peoples')),
+)
+
+COLOR_CHOICES = (
+    ('lightskinned', ("Light Skinned")),
+    ('darkskinned', ("Dark Skinned")),
+    ('other', ("Other")),
+)
+
+NATORIGIN_CHOICES = (
+    ('hispanic', ("Hispanic")),
+    ('mexican', ("Mexican")),
+    ('middleeastern', ("Middle Eastern")),
+    ('eastindian', ("East Indian")),
+    ('Asian', ("Asian")),
+    ('African', ("African")),
+    ('amerindian', ("Native American / First Peoples")),
+)
+
+DISABILITY_CHOICES = (
+    ('mental', ("Mental")),
+    ('physical', ("Physical")),
+    ('physical', ("Mental & Physical")),
+
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###

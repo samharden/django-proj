@@ -3,3 +3,7 @@ CASETYPE_CHOICES = (
     ('small-claim', ("Small Claims")),
     ('discrim', ("Discrimination")),
 )
+
+STATE_CHOICES = (
+        ('fl', ("Florida")),
+)

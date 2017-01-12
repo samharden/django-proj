@@ -1,0 +1,25 @@
+
+
+{% extends "fl-discrim-helper/base0.html" %}
+
+{% block content %}
+
+
+    <center>
+
+    <h2>Florida Discrimination Complaint Builder:</h2>
+
+        <form action="" method="post">
+{% csrf_token %}
+
+  {{ complaint_type_form.as_p }}
+
+          <p><input type="submit" value="Go"></p>
+        </form>
+    </div></center>
+<body><td>
+<p><justify>Welcome to the Florida Discriminaiton Complaint Builder.</p>
+</justify>
+</body>
+
+{% endblock %}

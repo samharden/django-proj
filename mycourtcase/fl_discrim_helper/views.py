@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from .models import Question
@@ -24,7 +24,7 @@ def index(request):
 
             if choice == 'complaint':
 
-                return HttpResponse('Complaint')
+                return HttpResponseRedirect('choose-complaint-type.html')
 
             elif choice == 'research':
 
@@ -397,98 +397,7 @@ def workplace_complaint():
                            )
 
 
-def pub_acc_complaint_assistant():
-    form = pub_acc()
 
-    if form.validate_on_submit():
-        session['complaintant_lastname'] = form.complaintant_lastname._value()
-        session['complaintant_firstname'] = form.complaintant_firstname._value()
-        session['complaintant_mi'] = form.complaintant_mi._value()
-        session['complaintant_streetaddress'] = form.complaintant_streetaddress._value()
-        session['complaintant_aptnum'] = form.complaintant_aptnum._value()
-        session['complaintant_city'] = form.complaintant_city._value()
-        session['complaintant_county'] = form.complaintant_county._value()
-        session['complaintant_state'] = form.complaintant_state.data
-        session['complaintant_zip'] = form.complaintant_zip._value()
-        session['complaintant_phone'] = form.complaintant_phone._value()
-        session['complaintant_email'] = form.complaintant_email._value()
-        session['complaintant_dob'] = form.complaintant_dob._value()
-        session['complaintant_sex'] = form.complaintant_sex.data
-
-
-        session['otherperson_rel'] = form.otherperson_rel._value()
-        session['otherperson_lastname'] = form.otherperson_lastname._value()
-        session['otherperson_firstname'] = form.otherperson_firstname._value()
-        session['otherperson_mi'] = form.otherperson_mi._value()
-        session['otherperson_streetaddress'] = form.otherperson_streetaddress._value()
-        session['otherperson_aptnum'] = form.otherperson_aptnum._value()
-        session['otherperson_city'] = form.otherperson_city._value()
-        session['otherperson_state'] = form.otherperson_state.data
-        session['otherperson_zip'] = form.otherperson_zip._value()
-        session['otherperson_phone'] = form.otherperson_phone._value()
-
-        session['organization_name'] = form.organization_name._value()
-        session['organization_streetaddress'] = form.organization_streetaddress._value()
-        session['organization_city'] = form.organization_city._value()
-        session['organization_county'] = form.organization_county._value()
-        session['organization_state'] = form.organization_state.data
-        session['organization_zip'] = form.organization_zip._value()
-        session['organization_phone'] = form.organization_phone._value()
-        session['organization_type'] = form.organization_type._value()
-        session['organization_owner'] = form.organization_owner._value()
-        session['organization_ownerphone'] = form.organization_ownerphone._value()
-
-        session['org_pr_name'] = form.org_pr_name._value()
-        session['org_pr_streetaddress'] = form.org_pr_streetaddress._value()
-        session['org_pr_city'] = form.org_pr_city._value()
-        session['org_pr_county'] = form.org_pr_county._value()
-        session['org_pr_state'] = form.org_pr_state.data
-        session['org_pr_zip'] = form.org_pr_zip._value()
-        session['org_pr_phone'] = form.org_pr_phone._value()
-
-        session['reason_color'] = form.reason_color.data
-        session['reason_color_choose'] = form.reason_color_choose.data
-        session['reason_natorigin'] = form.reason_natorigin.data
-        session['reason_natorigin_choose'] = form.reason_natorigin_choose.data
-        session['reason_sex'] = form.reason_sex.data
-        session['reason_sex_choose'] = form.reason_sex_choose.data
-        session['reason_preg'] = form.reason_preg.data
-        session['reason_religion'] = form.reason_religion.data
-        session['reason_religion_disc'] = form.reason_religion_disc._value()
-        session['reason_disability'] = form.reason_disability.data
-        session['reason_disability_choose'] = form.reason_disability_choose.data
-        session['reason_familial_status'] = form.reason_familial_status.data
-        session['reason_familial_status_disc'] = form.reason_familial_status_disc._value()
-        session['reason_race'] = form.reason_race.data
-        session['reason_race_choose'] = form.reason_race_choose.data
-
-        session['harm_description'] = form.harm_description._value()
-
-        session['reason_other'] = form.reason_other.data
-
-        session['disability_yes'] = form.disability_yes.data
-        session['disability_past'] = form.disability_past.data
-        session['disability_treat_asif'] = form.disability_treat_asif.data
-
-        session['previous_charge'] = form.previous_charge.data
-
-        session['previous_charge_agency'] = form.previous_charge_agency._value()
-        session['previous_charge_date'] = form.previous_charge_date._value()
-
-        session['sought_help'] = form.sought_help.data
-        session['sought_help_disc'] = form.sought_help_disc._value()
-
-        session['box_1'] = form.box_1.data
-        session['box_2'] = form.box_2.data
-
-        return redirect(url_for('publicaccomodationcomplaint'))
-    else:
-        pass
-
-    return render_template('pub-acc-complaint-assistant.html',
-                           title='Public Access Builder.html',
-                           form=form
-                           )
 
 
 def publicaccomodationcomplaint():

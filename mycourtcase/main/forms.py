@@ -11,3 +11,7 @@ class ProblemForm(forms.Form):
                                         required = True,
 
                                         )
+    state = forms.ChoiceField(label = 'State',
+                                        choices = STATE_CHOICES,
+                                        required = True,
+                                        )
