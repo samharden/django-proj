@@ -19,23 +19,24 @@ def pinellas_dui(request):
             print("Valid Hello there")
             judge = pinell_judge.cleaned_data['pinell_judge']
             print(judge)
-            if judge == 'farr':
-                #return render(hills_dui_farr(request), 'hills_dui_farr')
-                return render(request, 'crim/fl/hills/dui/farrdui.html')
-            elif judge == 'greco':
-                return render(request, 'crim/fl/hills/dui/grecodui.html')
-            elif judge == 'jeske':
-                return render(request, 'crim/fl/hills/dui/jeskedui.html')
-            elif judge == 'lefler':
-                return render(request, 'crim/fl/hills/dui/leflerdui.html')
-            elif judge == 'mcneil':
-                return render(request, 'crim/fl/hills/dui/mcneildui.html')
-            elif judge == 'myers':
-                return render(request, 'crim/fl/hills/dui/myersdui.html')
-            elif judge == 'taylor':
-                return render(request, 'crim/fl/hills/dui/taylordui.html')
+            if judge == 'bedinghaus':
+                return render(request, 'crim/fl/pinellas/dui/bedinghaus.html')
+            elif judge == 'carballo':
+                return render(request, 'crim/fl/pinellas/dui/carballo.html')
+            elif judge == 'dittmer':
+                return render(request, 'crim/fl/pinellas/dui/dittmer.html')
+            elif judge == 'horrox':
+                return render(request, 'crim/fl/pinellas/dui/horrox.html')
+            elif judge == 'levine':
+                return render(request, 'crim/fl/pinellas/dui/levine.html')
+            elif judge == 'mckyton':
+                return render(request, 'crim/fl/pinellas/dui/mckyton.html')
+            elif judge == 'overton':
+                return render(request, 'crim/fl/pinellas/dui/overton.html')
+            elif judge == 'pierce':
+                return render(request, 'crim/fl/pinellas/dui/pierce.html')
             elif judge == 'notsure':
-                return render(request, 'crim/fl/hills/dui/dui.html')
+                return render(request, 'crim/fl/pinellas/dui/dui.html')
 
     else:
         pinell_judge = PinellasJudges()

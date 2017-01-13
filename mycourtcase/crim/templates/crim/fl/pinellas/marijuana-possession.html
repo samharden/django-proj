@@ -1,0 +1,22 @@
+
+{% extends "crim/base0.html" %}
+
+{% block content %}
+
+
+
+
+
+<h3 class="title-border" style="text-align: center;">Part II</h3>
+<form  method="post" action "">
+      {% csrf_token %}
+
+<center>If you know who your judge is, choose them here:</center>
+<center> {{ pinell_judge }}</center>
+
+
+
+            <p><center><input type="submit" value="continue" /></p></center>
+</form>
+
+{% endblock %}

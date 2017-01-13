@@ -22,8 +22,7 @@ def index(request):
             print("Valid index")
             case_type = crimform.cleaned_data['case_type']
             print(case_type)
-            state = crimform.cleaned_data['state']
-            print(state)
+
             county = crimform.cleaned_data['county']
             print(county)
 
@@ -50,6 +49,10 @@ def index(request):
             elif case_type == 'dui' and county == 'pinell':
                 pinell_judge = PinellasJudges()
                 return HttpResponseRedirect('fl/pinellas/pinellas-dui.html')
+
+            elif case_type == 'marijuanaposs' and county == 'pinell':
+                pinell_judge = PinellasJudges()
+                return HttpResponseRedirect('fl/pinellas/marijuana-possession.html')
         else:
             crimform = CrimCaseTypeForm()
 

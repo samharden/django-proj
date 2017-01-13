@@ -9,11 +9,11 @@ class CrimCaseTypeForm(forms.Form):
                                         required = False,
 
                                         )
-    state = forms.ChoiceField(label = 'State:',
-                                    choices = CRIM_STATE_CHOICES,
-                                    required = False,
-
-                                    )
+    # state = forms.ChoiceField(label = 'State:',
+    #                                 choices = CRIM_STATE_CHOICES,
+    #                                 required = False,
+    #
+    #                                 )
     county = forms.ChoiceField(label = 'County:',
                                     choices = CRIM_COUNTY_CHOICES,
                                     required = False,

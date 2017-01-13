@@ -10,6 +10,7 @@ from crim.view_routes.hills import (hillsborough_dwlsr,
                                     hillsborough_marijuanaposs,
                                     )
 from crim.view_routes.pinel import (pinellas_dui,
+                                    pinellas_marijuanaposs,
 
                                     )
 
@@ -40,7 +41,11 @@ urlpatterns = [
 
     url(r'^fl/pinellas/pinellas-dui.html$',
         pinellas_dui.pinellas_dui,
-        name='hillsborough-dui'),
+        name='pinellas-dui'),
+
+    url(r'^fl/pinellas/marijuana-possession.html$',
+        pinellas_marijuanaposs.pinellas_marijuanaposs,
+        name='pinellas-marijuana-possession'),
 
     #url(r'^pinellas.html$', views.pinellas, name='pinellas'),
 ]

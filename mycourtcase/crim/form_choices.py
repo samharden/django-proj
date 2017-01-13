@@ -25,6 +25,13 @@ CRIM_JUDGE_CHOICES_HILLSB = (
     ('notsure', ("Not Sure")),
 )
 CRIM_JUDGE_CHOICES_PINELL = (
-    ('joe', ("Joe")),
-
+    ('bedinghaus', ("Bedinghaus")),
+    ('carballo', ("Carballo")),
+    ('dittmer', ("Dittmer")),
+    ('horrox', ("Horrox")),
+    ('levine', ("Levine")),
+    ('mckyton', ("McKyton")),
+    ('overton', ("Overton")),
+    ('pierce', ("Pierce")),
+    ('notsure', ("Not Sure")),
 )

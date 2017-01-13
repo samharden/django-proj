@@ -944,11 +944,15 @@ body.error404 .main {
   background: #4b494f;
   color: #a0a0a0;
   line-height: 2rem;
-  font-size: .7rem;
+  font-size: 1rem;
+  position: fixed;
+  z-index: 1;
+
 }
 .topbar a {
   color: #aaa;
   font-weight: 400;
+
 }
 .topbar a:hover {
   color: #ccc;
@@ -1078,9 +1082,11 @@ body.error404 .main {
   left: 0;
   right: 0;
   transition: background .5s;
+  font-size: 1.25em;
 }
 .navbar.fixed {
   position: fixed;
+
 }
 .navbar-collapse .navbar {
   background: #f7f7f7;
@@ -1102,6 +1108,7 @@ body.error404 .main {
   transition: all .2s;
   line-height: 95px;
   display: block;
+  position: fixed;
 }
 .brand:before {
   content: '';
